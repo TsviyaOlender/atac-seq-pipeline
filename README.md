@@ -1,10 +1,10 @@
 # atac-seq-pipeline
 Pipeline to analyze ATACseq data
 ##################################################################################################<br>
-# This script was developed by Tsviya Olender, Molecular Genetics Department, Weizmann Institute #<br>
-# last update: 26 June 2018<br>
-# The script is still under development and might contains bugs.<br>
-# For any problem: please write to tsviya.olender@weizmann.ac.il, I will appreciate your feedback # <br>
+# Developed by Tsviya Olender, Molecular Genetics Department, Weizmann Institute #<br>
+last update: 26 June 2018<br>
+The script is still under development and might contains bugs.<br>
+For any problem: please write to tsviya.olender@weizmann.ac.il, I will appreciate your feedback # <br>
 ##################################################################################################<br>
 <br>
 ######################################################################################################<br>
