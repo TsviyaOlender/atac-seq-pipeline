@@ -6,23 +6,17 @@ last update: 26 June 2018<br>
 The script is still under development and might contains bugs.<br>
 For any problem: please write to tsviya.olender@weizmann.ac.il, I will appreciate your feedback # <br>
 ##################################################################################################<br>
-<br>
-######################################################################################################<br>
 # INSTALLATION<br>
-#####################################################################################################<br>
-The script has a hard coded parameter =>$progD<br>
-which defines the location of the code.<br>
-Should be changed when the package is moved.<br>
-The script collect_bedtools_count.pl has a hard coded parameter=> $pipelinePATH<br>
-Should contain the location of the pipeline<br>
+The pipeline was developed in perl.
+Update the $progD parameter to be the full path of code location.<br>
+The script collect_bedtools_count.pl has a hard coded parameter=> $pipelinePATH, it should contain the location of the pipeline<br>
 #####################################################################################################<br>
 LOCATION OF FASTQ<br>
 Very often, crude reads come in multiple fastq files per sample. In this case, the script expects a file structure with a folder per sample,<br>
 all samples in the same folder. The fastq files should be gzipped, with R1 for R1 and R2 for R2.<br>
-In this case, the parameter file has to be defined as follows:<br>
+The parameter file has to be defined as follows:<br>
 1. Define the crude reads location: by the parameter crude_reads_location_for_merging<br>
 2. set the option combine_fastq to 1<br>
-<br>
 Otherwise, if you have allready 2 fastq files per sample (one for R1, and one for R2)- put the files under 1_fastq, in the working directory.<br>
 Set the option combine_fastq to 0<br>
 The fastq files much be named as: XXX_R1.fastq.gz, XXX_R2.fastq.gz- where XXX is the sample name.<br>
@@ -30,8 +24,7 @@ The fastq files much be named as: XXX_R1.fastq.gz, XXX_R2.fastq.gz- where XXX is
 ########################################################################################################<br>
 # USAGE<br>
 ########################################################################################################<br>
-# the script atacpipeline.pl send the queries to the server.<br>
-It runs the script run_ATAC_Ts_V2.pl in parallel<br>
+The script atacpipeline.pl send the LSF queries to a server. It runs the script run_ATAC_Ts_V2.pl in parallel<br>
 
 The script accepts the following:<br>
 1. name of file with names of all samples. the file should contain a row per sample. <br>
