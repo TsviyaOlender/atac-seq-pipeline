@@ -1,0 +1,16 @@
+[params]
+genome = /shareDB/BioServices/bowtie2_db/mm10/mm10
+adaptor1 = CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+adaptor2 = CTGTCTCTTATACACATCTGACGCTGCCGACGAGTGTAGATCTCGGTGGTCGCCGTATCATT
+TSS_file = /home/labs/bioservices/bareket/Yael/ATACscript/ATACpipeline_V2/lib/TSS_+2500_-2500_uniqueProm.bed
+crude_reads_location_for_merging =/home/labs/bioservices/bareket/Yael/ATACscript/ATACpipeline_V2/fastq
+
+[setup_run]
+combine_fastq = 0
+fastqc = 0
+trim_adapter = 0
+make_body = 1
+make_plots = 1
+nucleosome_free = 1
+call_peaks = 1
+countTSS_reads = 1
