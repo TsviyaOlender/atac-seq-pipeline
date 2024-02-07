@@ -40,38 +40,36 @@ The script accepts the following:<br>
 4. The memory (default is 4000). In order to change the default memory, one has to define the queue in the command line, otherwise the script will not work. <br>
 Note that the script runs in 4 threds, therefore a memory of 4000G means 16000Gb memory per job.<br>
 perl PATH_TO_prog/atacpipeline.pl samples.txt params_file [queue_name memory]<br>
-### example<br>
-### perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt<br>
-### submits all samples listed in samples.txt to the analysis. The parameters are defined in the file run_ATAC_Ts_V1_params.txt.<br>
-### The jobs will be submitted to the queue new-all with memory of 4000G.<br>
-###
-### perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt new-short 8000<br>
-### here the jobs was submitted with more memory. Because we changed the default memory we add also to define the queue.<br>
-###
-### perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt new-all.q <br>
-### here we submitted the job to different queue, with the default memory<br>
-###
-### perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt new-all.q 8000<br>
-### both: queue name and memory are not the default options<br>
+example<br>
+perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt<br>
+submits all samples listed in samples.txt to the analysis. The parameters are defined in the file run_ATAC_Ts_V1_params.txt.<br>
+The jobs will be submitted to the queue new-all with memory of 4000G.<br>
 
+perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt new-short 8000<br>
+here the jobs was submitted with more memory. Because we changed the default memory we add also to define the queue.<br>
 
+perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt new-all.q <br>
+here we submitted the job to different queue, with the default memory<br>
+
+perl PATH_TO_prog/atacpipeline.pl samples.txt run_ATAC_Ts_V2_params.txt new-all.q 8000<br>
+both: queue name and memory are not the default options<br>
 ########################################################################################################<br>
 # Generate a quality report<br>
 ########################################################################################################<br>
 
 The script collect_qual_params.pl generates a report with the quality parameters of the run (e.g. num of reads in every analysis step).<br>
 # run example:<br>
-# perl PATH_TO_prog/collect_qual_params.pl samples.txt > qual_report.txt<br>
+perl PATH_TO_prog/collect_qual_params.pl samples.txt > qual_report.txt<br>
 This script also generates a file called TSS_counts_table.txt with the crude read counts, and the counts in FPKM of the promoters.<br>
 ########################################################################################################<br>
 # Explanation on the parameter file<br>
 ########################################################################################################<br>
-# this files allows the user to set up the run parameters.<br>
-# It is build from 2 parts:<br>
-# [params] and [setup_run]<br>
-# the parameters in params are self explanatory<br>
-# in the set up the user decides which parts of the analysis will be processes<br>
-# 0 mean no, 1 means yes<br>
+this files allows the user to set up the run parameters.<br>
+It is build from 2 parts:<br>
+[params] and [setup_run]<br>
+the parameters in params are self explanatory<br>
+in the set up the user decides which parts of the analysis will be processes<br>
+0 mean no, 1 means yes<br>
 collectReads = 0 => In case the fastq is divided into several part. The script excpet to find a folder per sample, gzipped.<br>
 R1 files should be named as *R1* (meaning- they should contain the string R1 in the file name), and R2 for R2 files.<br>
 The location of the crude reads is defined by crude_reads_location_for_merging<br>
